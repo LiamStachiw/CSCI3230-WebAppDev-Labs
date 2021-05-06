@@ -1,0 +1,15 @@
+tr {
+    border-bottom: 1px solid grey;
+}
+
+th {
+    padding-right: 1rem;
+}
+
+.showtimes {
+    padding-top: 2.5rem;
+}
+
+.columns {
+    padding: 2rem;
+}

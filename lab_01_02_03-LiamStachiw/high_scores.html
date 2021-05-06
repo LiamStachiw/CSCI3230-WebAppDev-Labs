@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku - High Scores</title>
+    <link rel="stylesheet" href="styles/sudoku.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="./scripts/bulma.js"></script>
+    <script src="./scripts/high_scores.js"></script>
+</head>
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img id="logo" src="./images/logo.gif" alt="Sudoku Logo">
+
+            <p class="navbar-item">
+                Sudoku Centre
+            </p>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="mainMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="sudoku.html">
+                    Play Game
+                </a>
+                
+                <a class="navbar-item" href="high_scores.html">
+                    High Scores
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <table id="hiscores" class="hiscores">
+        <tr class="hiscores-header">
+            <td class="hiscores-data">Date</td>
+            <td class="hiscores-data">Duration</td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/showtimes.css')
+  link(rel='stylesheet' href='../css/mystyles.css')
+  script(type='text/javascript' src='https://code.jquery.com/jquery-latest.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js' integrity='sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==' crossorigin='anonymous')
+  script(type='text/javascript' src='../scripts/showtimes.js')
+  title Movie Details
+section.hero.is-primary
+  .hero-body
+    p.title
+      | Showtimes
+    p.subtitle
+      | Give me something to do!
+.columns
+  .column.is-one-fifth
+    .container.is-fluid
+    form(action='/showtimes_api', method='post')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Location:
+        .field-body
+          .field
+            span.select
+              select#location(name='location_id')
+                option(selected='' value='1') Oshawa Cinemas
+                option(value='2') Anywhere Else
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Date:
+        .field-body
+          .field
+            input#date.input(type='date' name='selected_date')
+      .field.is-horizontal
+        .field-label
+        .field-body
+          .control
+            button#submit.button.is-primary Submit
+    .container.is-fluid.showtimes
+      table#showtimes
+  .column.is-one-fifth
+    // filler column for space
+  .column
+    #movieDetails.container.is-max-desktop
+      .field.is-grouped.is-grouped-centered
+        img#poster(src='' alt='Movie Poster')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Title:
+        .field-body
+          .field
+            input#title.input(type='text' readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Year:
+        .field-body
+          .field
+            input#year.input(type='text' readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Genre:
+        .field-body
+          .field
+            input#genre.input(type='text' readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Runtime:
+        .field-body
+          .field
+            input#runtime.input(type='text' readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Director:
+        .field-body
+          .field
+            input#director.input(type='text' readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Writer:
+        .field-body
+          .field
+            textarea#writer.textarea(readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Actors:
+        .field-body
+          .field
+            textarea#actors.textarea(readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Plot:
+        .field-body
+          .field
+            textarea#plot.textarea(readonly='')
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Rating:
+        #rating.field-body

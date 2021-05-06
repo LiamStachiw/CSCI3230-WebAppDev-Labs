@@ -1,0 +1,75 @@
+#logo {
+    width: 50px;
+    height: 30px;
+}
+
+.board {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 225%;
+    text-align: center;
+
+    border-collapse: collapse;
+
+    margin: auto;
+    width: fit-content;
+    border: 3px solid black;
+}
+
+.board-cell {
+    margin: 0px;
+    
+    width: 4rem;
+    height: 4rem;
+
+    border: 1px solid black;
+}
+
+.board-cell:nth-child(3n) {
+    border-right: 3px solid black;
+}
+
+.board-row:nth-child(3n) {
+    border-bottom: 3px solid black;
+}
+
+.controls {
+    font-family: sans-serif;
+    font-size: 225%;
+    text-align: center;
+
+    margin: auto;
+    width: fit-content;
+    padding-top: 2rem;
+
+    color: rgb(77, 77, 77);
+}
+
+.controls-cell {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid black;
+}
+
+.board-cell:hover, .controls-cell:hover {
+    background-color: #f5dd90;
+}
+
+.hiscores {
+    font-family: sans-serif;
+    font-size: 150%;
+    text-align: center;
+
+    border-collapse: collapse;
+
+    margin: auto;
+    width: fit-content;
+}
+
+.hiscores-header {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.hiscores-data {
+    padding: 1rem;
+}

@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/showtimes.css')
+  link(rel='stylesheet' href='../css/mystyles.css')
+  script(type='text/javascript' src='https://code.jquery.com/jquery-latest.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js' integrity='sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==' crossorigin='anonymous')
+  script(type='text/javascript' src='../scripts/showtimes.js')
+  title Movie Details
+section.hero.is-primary
+  .hero-body
+    p.title
+      | Buy Tickets
+    p.subtitle
+      | Let's do this!
+.columns
+  .column.is-one-fifth
+  .column.is-one-fifth
+    .container.is-fluid
+    form(action='/buyTickets', method='post')
+      input(type="hidden", name="movie_id", value=movie_id)
+      input(type="hidden", name="location_id", value=location_id)
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Movie:
+        .field-body
+          .field
+            .control
+              input.input(type="text", name="movie_title", value=movie_title, readonly)
+      
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Location:
+        .field-body
+          .field
+            .control
+              input.input(type="text", name="location", value=location, readonly)
+
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Date:
+        .field-body
+          .field
+            .control
+              input.input(type="text", name="selected_date", value=selected_date, readonly)
+
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Time:
+        .field-body
+          .field
+           .control
+             input.input(type="text", name="start_time", value=start_time, readonly)
+
+      .field.is-horizontal
+        .field-label.is-normal
+          label.label Quantity:
+        .field-body
+          .field
+            .control
+             input.input(type="number", name="quantity", min="1", max="10")
+
+      .field.is-horizontal
+        .field-label
+        .field-body
+          .control
+            button#submit.button.is-primary Buy
+    .container.is-fluid.showtimes
+  .column

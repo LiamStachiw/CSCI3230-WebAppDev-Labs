@@ -1,0 +1,28 @@
+.spreadsheet{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+    text-align: center;
+
+    border-collapse: collapse;
+
+    margin: auto;
+    width: fit-content;
+    border: 1px solid black;
+}
+
+th, td{
+    width: 14rem;
+    height: 3rem;
+
+    border: 1px solid black;
+}
+
+th{
+    background-color: #e0e0e0;
+}
+
+svg{
+    display: block;
+    margin: auto;
+    width: fit-content;
+}

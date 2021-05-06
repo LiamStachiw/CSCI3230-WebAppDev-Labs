@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/showtimes.css">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.2.0/d3.min.js" integrity="sha512-C2RveGuPIWqkaLAluvoxyiaN1XYNe5ss11urhZWZYBUA9Ydgj+hfGKPcxCzTwut1/fmjEZR7Ac35f2aycT8Ogw==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts/showtimes.js"></script>
+    <title>Movie Details</title>
+</head>
+<body>
+
+    <section class="hero is-primary">
+        <div class="hero-body">
+          <p class="title">
+            Showtimes
+          </p>
+          <p class="subtitle">
+            Give me something to do!
+          </p>
+        </div>
+    </section>
+
+
+    <div class="columns">
+        <div class="column is-one-fifth">
+            <div class="container is-fluid">
+                <form action="/showtimes_api" method="POST">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Location:</label>
+                        </div>      
+                        <div class="field-body">
+                            <div class="field">
+                                <span class="select">
+                                    <select id="location" name="location_id">
+                                        <option selected value="1">Oshawa Cinemas</option>
+                                        <option value="2">Anywhere Else</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Date:</label>
+                        </div>      
+                        <div class="field-body">
+                            <div class="field">
+                                <input class="input" type="date" id="date" name="selected_date">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="field is-horizontal">
+                        <div class="field-label"></div>
+                        <div class="field-body">
+                            <div class="control">
+                                <button class="button is-primary" id="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container is-fluid showtimes">
+                <table id="showtimes">
+
+                </table>
+            </div>
+        </div>
+
+        <div class="column is-one-fifth"><!-- filler column for space --></div>
+        
+        <div class="column">
+            <div class="container is-max-desktop" id="movieDetails">
+                <div class="field is-grouped is-grouped-centered">
+                    <img id="poster" src="" alt="Movie Poster">
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Title:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <input type="text" class="input" id="title" readonly>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Year:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <input type="text" class="input" id="year" readonly>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Genre:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <input type="text" class="input" id="genre" readonly>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Runtime:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <input type="text" class="input" id="runtime" readonly>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Director:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <input type="text" class="input" id="director" readonly>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Writer:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <textarea class="textarea" id="writer" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Actors:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <textarea class="textarea" id="actors" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Plot:</label>
+                    </div>      
+                    <div class="field-body">
+                        <div class="field">
+                            <textarea class="textarea" id="plot" readonly></textarea>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Rating:</label>
+                    </div>      
+                    <div class="field-body" id="rating">
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+</body>
+</html>
